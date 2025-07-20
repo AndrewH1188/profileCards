@@ -1,39 +1,92 @@
-:root { 
+:root {
+    --border-radius-0: 0px;
     --border-radius-20: 20px;
 }
 
 
-.row { 
+.row {
     display: grid;
-    grid-template-areas: "imageCol textCol";
-    grid-template-columns: 260px 450px;
-    grid-template-rows: auto;
+    grid-template-areas: "imageCol" "textCol";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 
-.imageCol { 
-    grid-area: imageCol; 
-    border-top-left-radius: var(--border-radius-20);
-    border-bottom-left-radius: var(--border-radius-20);
+.imageCol {
+    grid-area: imageCol;
     img {
         border-top-left-radius: var(--border-radius-20);
-    border-bottom-left-radius: var(--border-radius-20);
+        border-top-right-radius: var(--border-radius-20);
     }
 }
 
-.textCol { 
-  grid-area: textCol; 
-  border-top-right-radius: var(--border-radius-20);
-  border-bottom-right-radius: var(--border-radius-20);
-  background-image: url('/assets/images/background.jpg');
-  background-size: cover;
-  background-position: center;
-  padding: 2rem;
-
-  span { display: block; }
-
-  img {
-    border-top-right-radius: var(--border-radius-20);
+.textCol {
+    grid-area: textCol;
+    border-bottom-left-radius: var(--border-radius-20);
     border-bottom-right-radius: var(--border-radius-20);
-  }
+    background-image: url('/assets/images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 2rem;
+
+    img {
+        border-top-right-radius: var(--border-radius-20);
+        border-bottom-right-radius: var(--border-radius-20);
+    }
+
+    span {
+        display: block;
+        line-height: 1.2;
+    }
+
+    .rank,
+    .service,
+    .name,
+    .regiment {
+        font-size: 12px;
+    }
+
+    .rankName,
+    .serviceNumber,
+    .nameOfSoldier,
+    .regimentName {
+        font-size: 19px;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+}
+
+@media screen and (min-width: 576px) {
+    .row {
+        grid-template-areas: "imageCol textCol";
+        grid-template-columns: 260px 290px;
+        grid-template-rows: auto;
+    }
+    .imageCol {
+        img {
+            border-top-left-radius: var(--border-radius-20);
+            border-bottom-left-radius: var(--border-radius-20);
+            border-top-right-radius: var(--border-radius-0);
+        }
+    }
+
+    .textCol {
+        grid-area: textCol;
+        border-top-right-radius: var(--border-radius-20);
+        border-bottom-right-radius: var(--border-radius-20);
+        border-bottom-left-radius: var(--border-radius-0);
+        padding: 2rem;
+
+        img {
+            border-top-right-radius: var(--border-radius-20);
+            border-bottom-right-radius: var(--border-radius-20);
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .row { grid-template-columns: 260px 450px; }
 }
