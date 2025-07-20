@@ -1,0 +1,37 @@
+:root {
+  --border-radius-20: 20px;
+}
+
+.row {
+  display: grid;
+  grid-template-areas: "imageCol textCol";
+  grid-template-columns: 260px 450px;
+  grid-template-rows: auto;
+}
+
+.imageCol {
+  grid-area: imageCol;
+  border-top-left-radius: var(--border-radius-20);
+  border-bottom-left-radius: var(--border-radius-20);
+}
+.imageCol img {
+  border-top-left-radius: var(--border-radius-20);
+  border-bottom-left-radius: var(--border-radius-20);
+}
+
+.textCol {
+  grid-area: textCol;
+  border-top-right-radius: var(--border-radius-20);
+  border-bottom-right-radius: var(--border-radius-20);
+  background-image: url("/assets/images/background.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 2rem;
+}
+.textCol span {
+  display: block;
+}
+.textCol img {
+  border-top-right-radius: var(--border-radius-20);
+  border-bottom-right-radius: var(--border-radius-20);
+}/*# sourceMappingURL=styling.css.map */
