@@ -3,22 +3,24 @@
     --border-radius-20: 20px;
 }
 
-
 .row {
     display: grid;
     grid-template-areas: "imageCol" "textCol";
-    grid-template-columns: 1fr;
+    grid-template-columns: 260px;
     grid-template-rows: auto auto;
     justify-content: center;
     margin-top: 20px;
 }
 
-
 .imageCol {
     grid-area: imageCol;
+    padding: 0;
     img {
         border-top-left-radius: var(--border-radius-20);
         border-top-right-radius: var(--border-radius-20);
+        width: 100%;
+        height: auto; 
+        display: block;
     }
 }
 
@@ -56,7 +58,6 @@
         font-weight: 700;
         margin-bottom: 10px;
     }
-
 }
 
 @media screen and (min-width: 576px) {
