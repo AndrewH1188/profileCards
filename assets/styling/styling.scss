@@ -1,5 +1,6 @@
 :root {
     --border-radius-0: 0px;
+    --border-radius-15: 15px;
     --border-radius-20: 20px;
 }
 
@@ -7,7 +8,7 @@
     display: grid;
     grid-template-areas: "imageCol" "textCol";
     grid-template-columns: 260px;
-    grid-template-rows: auto auto;
+    grid-template-rows: 322px 322px;
     justify-content: center;
     margin-top: 20px;
 }
@@ -41,6 +42,7 @@
     span {
         display: block;
         line-height: 1.2;
+        margin: auto;
     }
 
     .rank,
@@ -56,7 +58,28 @@
     .regimentName {
         font-size: 19px;
         font-weight: 700;
-        margin-bottom: 10px;
+    }
+
+    .rankName,
+    .serviceNumber,
+    .nameOfSoldier { margin-bottom: 10px; }
+
+    .regimentName { margin-bottom: 24px }
+
+    .profileButton { 
+        border: 0;
+        border-radius: var(--border-radius-15);
+        background-color: #8b9081;
+        padding: 8px 14px;
+        color: #000;
+        width: 100%;
+        display: block;
+        text-align: center;
+        &:hover { 
+            background-color: #797b6d;
+            color: #fff;
+            text-decoration: none;
+        }
     }
 }
 
@@ -81,6 +104,8 @@
         border-bottom-left-radius: var(--border-radius-0);
         padding: 2rem;
 
+        .service { margin-top: 12px; }
+
         img {
             border-top-right-radius: var(--border-radius-20);
             border-bottom-right-radius: var(--border-radius-20);
@@ -90,4 +115,9 @@
 
 @media screen and (min-width: 768px) {
     .row { grid-template-columns: 260px 450px; }
+    .textCol {
+        .service { margin-top: 18px; }
+
+        .profileButton { width: 200px;}
+    }
 }

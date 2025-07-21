@@ -1,5 +1,6 @@
 :root {
   --border-radius-0: 0px;
+  --border-radius-15: 15px;
   --border-radius-20: 20px;
 }
 
@@ -7,7 +8,7 @@
   display: grid;
   grid-template-areas: "imageCol" "textCol";
   grid-template-columns: 260px;
-  grid-template-rows: auto auto;
+  grid-template-rows: 322px 322px;
   justify-content: center;
   margin-top: 20px;
 }
@@ -40,6 +41,7 @@
 .textCol span {
   display: block;
   line-height: 1.2;
+  margin: auto;
 }
 .textCol .rank,
 .textCol .service,
@@ -53,7 +55,29 @@
 .textCol .regimentName {
   font-size: 19px;
   font-weight: 700;
+}
+.textCol .rankName,
+.textCol .serviceNumber,
+.textCol .nameOfSoldier {
   margin-bottom: 10px;
+}
+.textCol .regimentName {
+  margin-bottom: 24px;
+}
+.textCol .profileButton {
+  border: 0;
+  border-radius: var(--border-radius-15);
+  background-color: #8b9081;
+  padding: 8px 14px;
+  color: #000;
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+.textCol .profileButton:hover {
+  background-color: #797b6d;
+  color: #fff;
+  text-decoration: none;
 }
 
 @media screen and (min-width: 576px) {
@@ -74,6 +98,9 @@
     border-bottom-left-radius: var(--border-radius-0);
     padding: 2rem;
   }
+  .textCol .service {
+    margin-top: 12px;
+  }
   .textCol img {
     border-top-right-radius: var(--border-radius-20);
     border-bottom-right-radius: var(--border-radius-20);
@@ -82,5 +109,11 @@
 @media screen and (min-width: 768px) {
   .row {
     grid-template-columns: 260px 450px;
+  }
+  .textCol .service {
+    margin-top: 18px;
+  }
+  .textCol .profileButton {
+    width: 200px;
   }
 }/*# sourceMappingURL=styling.css.map */
